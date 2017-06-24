@@ -1,0 +1,623 @@
+
+/********\
+
+   ETAPE_2
+
+\********/
+.fadeOut
+{
+    position: absolute;
+    display: block;
+    z-index: 10;
+    top:50%;
+    left:50%;
+    transform: translatex(-50%) translateY(-50%);
+    width: 100%;
+    height: 100%;
+    animation: fadeOut 2.5s ease 1;
+}
+.fadeIn
+{
+    position: absolute;
+    display: block;
+    z-index: 10;
+    top:50%;
+    left:50%;
+    transform: translatex(-50%) translateY(-50%);
+    width: 100%;
+    height: 100%;
+    /*animation: fadeIn 1s 2.5s ease 1;*/
+}
+.etape_2 {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    background: #efefef;
+    z-index: 1;
+}
+
+
+.etape_2 section.header h1 {
+    animation: movingTitleUp 0.3s 2.7s ease 1 forwards;
+}
+
+@keyframes movingTitleUp {
+    0% {
+        top: 0%;
+    }
+    100% {
+        top: -130%;
+    }
+}
+
+.etape_2 section.avatars {
+    width: 100%;
+    max-width: 100%;
+    height: 79%;
+    background: #efefef;
+    display: flex;
+}
+
+
+/* arrow */
+
+.etape_2 section.avatars:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    background: #fff;
+    margin: 0px auto;
+    width: 5px;
+    height: 5px;
+    box-shadow: 0em 0.3em 0 0 rgb(92, 193, 240), 0.3em 0.3em 0 0 #fff, 0em 0.6em 0 0 rgb(92, 193, 240), 0.3em 0.6em 0 0 rgb(92, 193, 240), 0.6em 0.6em 0 0 #fff, 0em 0.9em 0 0 rgb(92, 193, 240), 0.3em 0.9em 0 0 rgb(92, 193, 240), 0.6em 0.9em 0 0 rgb(92, 193, 240), 0.9em 0.9em 0 0 #fff, 0em 1.2em 0 0 rgb(92, 193, 240), 0.3em 1.2em 0 0 rgb(92, 193, 240), 0.6em 1.2em 0 0 rgb(92, 193, 240), 0.9em 1.2em 0 0 rgb(92, 193, 240), 1.2em 1.2em 0 0 #fff, 0em 1.5em 0 0 rgb(92, 193, 240), 0.3em 1.5em 0 0 rgb(92, 193, 240), 0.6em 1.5em 0 0 rgb(92, 193, 240), 0.9em 1.5em 0 0 #fff, 0em 1.8em 0 0 rgb(92, 193, 240), 0.3em 1.8em 0 0 rgb(92, 193, 240), 0.6em 1.8em 0 0 #fff, 0em 2.1em 0 0 rgb(92, 193, 240), 0.3em 2.1em 0 0 #fff, 0em 2.4em 0 0 #fff;
+    animation: arrowAvatar 0.8s steps(1), arrowAvatar2 0.8s steps(1), pulseAvatar 0.3s ease 2, displayNone 0.3s ease forwards;
+    animation-delay: 0.3s, 0.6s, 1.7s, 3s;
+}
+
+.etape_2 section.avatars article:first-child img {
+    animation: pulse 0.3s 1.7s ease 2;
+}
+
+@keyframes arrowAvatar {
+    0% {
+        left: 15%;
+    }
+    100% {
+        left: 65%;
+    }
+}
+
+@keyframes arrowAvatar2 {
+    0% {
+        left: 65%;
+    }
+    100% {
+        left: 15%;
+    }
+}
+
+@keyframes pulseAvatar {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes displayNone {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.etape_2 section.avatars > article {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-end
+}
+
+.etape_2 section.avatars > article img {
+    width: auto;
+    height: 88%;
+    margin-bottom: 25px;
+}
+
+.etape_2 section.avatars > article img#bonhm2 {
+    height: 95%;
+    animation: displayNone 0.3s ease forwards;
+    animation-delay: 3s;
+}
+
+/********\
+
+   ETAPE_2_CARTE
+
+\********/
+.etape_2_carte {
+    position: absolute;
+    top: 0%;
+    right: -100%;
+    display: block;
+    width: 50%;
+    height: 100%;
+    background-image: url('../img/fond-carte.png');
+    background-repeat: repeat-y;
+    background-size: 100%;
+    z-index: 2;
+    animation: swipeLeft .8s ease 1 forwards, swipeRight .8s ease 1 forwards;
+    animation-delay: 3.5s, 7s;
+}
+
+@keyframes swipeLeft {
+    0% {
+        right: -100%
+    } 
+    100% {
+        right: 0%;
+    }
+}
+
+@keyframes swipeRight {
+    0% {
+        right: 0%;
+    } 
+    100% {
+        right: -100%;
+    }
+
+}
+
+.etape_2_carte section.header h1 {
+    margin-left: -98%;
+    top: -130%;
+    animation: movingTitleDown 0.3s ease 1 forwards, movingTitleUp 0.3s ease 1 forwards;
+    animation-delay: 4.1s, 6.6s;
+}
+
+
+@keyframes movingTitleDown {
+    0% {
+        top: -130%;
+    }
+    100% {
+        top: 0%;
+    }
+}
+
+.etape_2_carte section.carte article:first-child {
+    margin-top: -22%;
+    text-align: right;
+}
+
+.etape_2_carte section.carte article:first-child img {
+    position: relative;
+    height: 100%;
+}
+
+.etape_2_carte section.carte article:first-child:before {
+    content: "";
+    display: block;
+    width: 87px;
+    height: 127px;
+    position: absolute;
+    background-image: url("../img/marqueur.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 46%;
+    left: 46%;
+    z-index: 2;
+    animation: movingMarker 0.2s ease 3, movingMarker 0.2s ease 3;
+    animation-delay: 4.2s, 5.6s;
+}
+
+@keyframes movingMarker {
+    0% {
+        top: 46%;
+    }
+    100% {
+        top: 45%;
+    }
+}
+
+.etape_2_carte section.carte article:first-child:after {
+    content: "";
+    display: block;
+    width: 87px;
+    height: 127px;
+    position: absolute;
+    background-image: url("../img/marqueur.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 39%;
+    left: 59%;
+    z-index: 2;
+    animation: movingMarker2 0.3s ease 3;
+    animation-delay: 4.8s;
+}
+
+
+@keyframes movingMarker2 {
+    0% {
+        top: 39%;
+    }
+    100% {
+        top: 38%;
+    }
+}
+
+.etape_2_carte section.carte article:last-child {
+    position: relative;
+    margin-top: -70%;
+}
+
+.etape_2_carte section.carte article ul {
+    padding-left: 70px;
+}
+
+.etape_2_carte section.carte article:last-child ul > li.active {
+    color: rgb(92, 193, 240);
+}
+
+.etape_2_carte section.carte article ul li.active::before {
+    content: "";
+    position: absolute;
+    top: 0.4em;
+    left: -1em;
+    background: #fff;
+    margin: 0px auto;
+    width: 0.3em;
+    height: 0.3em;
+    box-shadow: 0em 0.3em 0 0 rgb(92, 193, 240), 0.3em 0.3em 0 0 #fff, 0em 0.6em 0 0 rgb(92, 193, 240), 0.3em 0.6em 0 0 rgb(92, 193, 240), 0.6em 0.6em 0 0 #fff, 0em 0.9em 0 0 rgb(92, 193, 240), 0.3em 0.9em 0 0 rgb(92, 193, 240), 0.6em 0.9em 0 0 rgb(92, 193, 240), 0.9em 0.9em 0 0 #fff, 0em 1.2em 0 0 rgb(92, 193, 240), 0.3em 1.2em 0 0 rgb(92, 193, 240), 0.6em 1.2em 0 0 rgb(92, 193, 240), 0.9em 1.2em 0 0 rgb(92, 193, 240), 1.2em 1.2em 0 0 #fff, 0em 1.5em 0 0 rgb(92, 193, 240), 0.3em 1.5em 0 0 rgb(92, 193, 240), 0.6em 1.5em 0 0 rgb(92, 193, 240), 0.9em 1.5em 0 0 #fff, 0em 1.8em 0 0 rgb(92, 193, 240), 0.3em 1.8em 0 0 rgb(92, 193, 240), 0.6em 1.8em 0 0 #fff, 0em 2.1em 0 0 rgb(92, 193, 240), 0.3em 2.1em 0 0 #fff, 0em 2.4em 0 0 #fff;
+    transform: scale(0.40);
+}
+
+.etape_2_carte section.carte article:last-child ul > li:first-child {
+    animation: pulse 0.1s 6s ease 2 forwards;
+}
+
+@keyframes arrowMap {
+    0% {
+        top: 1.2em;
+    }
+    100% {
+        top: 6em;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        color: rgb(92, 193, 240);
+    }
+    50% {
+        opacity: 0;
+        color: #fff;
+    }
+    100% {
+        opacity: 1;
+        color: rgb(92, 193, 240);
+    }
+}
+
+.etape_2_carte section.carte article li {
+    color: #fff;
+    font-size: 2.5em;;
+    line-height: 2em;;
+    text-align: left;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    0% {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    100%
+    {
+        background: rgba(255,255,255,1);
+    }
+}
+@keyframes fadeOut {
+
+    0% {
+        background: rgba(255, 255, 255, 1);
+    }
+    100% {
+        background: rgba(255, 255, 255, 0);
+    }
+}
+
+/********\
+
+   ETAPE_2_SEPCIALITES
+
+\********/
+.etape_2_specialites {
+    position: absolute;
+    top: 0%;
+    right: -100%;
+    display: block;
+    width: 50%;
+    height: 100%;
+    background-color: #E7344C;
+    z-index: 3;
+    animation: swipeLeft .8s ease 1 forwards, swipeRight .8s ease 1 forwards;
+    animation-delay: 7.2s, 16.5s;
+}
+
+
+.etape_2_specialites section.header h1 {
+    margin-left: -98%;
+    top: -130%;
+    animation: movingTitleDown 0.3s ease 1 forwards, movingTitleUp 0.3s ease 1 forwards;
+    animation-delay: 7.8s, 15.8s;
+}
+
+.etape_2_specialites section.spes {
+    height: 79%;
+}
+
+.etape_2_specialites section.spes article {
+    height: 100%;
+}
+
+.etape_2_specialites section.spes article ul {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.etape_2_specialites section.spes ul > li {
+    color: #fff;
+    font-size: 2.5em;;
+    line-height: 2em;;
+    text-align: left;
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.etape_2_specialites section.spes ul > li img {
+}
+
+.etape_2_specialites section.spes ul > li.active {
+    color: rgb(92, 193, 240);
+}
+
+.etape_2_specialites section.spes ul > li.active::before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 0.6em);
+    left: 0.4em;
+    background: #fff;
+    margin: 0px auto;
+    width: 0.3em;
+    height: 0.3em;
+    box-shadow: 0em 0.3em 0 0 rgb(92, 193, 240), 0.3em 0.3em 0 0 #fff, 0em 0.6em 0 0 rgb(92, 193, 240), 0.3em 0.6em 0 0 rgb(92, 193, 240), 0.6em 0.6em 0 0 #fff, 0em 0.9em 0 0 rgb(92, 193, 240), 0.3em 0.9em 0 0 rgb(92, 193, 240), 0.6em 0.9em 0 0 rgb(92, 193, 240), 0.9em 0.9em 0 0 #fff, 0em 1.2em 0 0 rgb(92, 193, 240), 0.3em 1.2em 0 0 rgb(92, 193, 240), 0.6em 1.2em 0 0 rgb(92, 193, 240), 0.9em 1.2em 0 0 rgb(92, 193, 240), 1.2em 1.2em 0 0 #fff, 0em 1.5em 0 0 rgb(92, 193, 240), 0.3em 1.5em 0 0 rgb(92, 193, 240), 0.6em 1.5em 0 0 rgb(92, 193, 240), 0.9em 1.5em 0 0 #fff, 0em 1.8em 0 0 rgb(92, 193, 240), 0.3em 1.8em 0 0 rgb(92, 193, 240), 0.6em 1.8em 0 0 #fff, 0em 2.1em 0 0 rgb(92, 193, 240), 0.3em 2.1em 0 0 #fff, 0em 2.4em 0 0 #fff;
+    transform: scale(0.40);
+}
+
+.etape_2_specialites section.spes ul > li div {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.etape_2_specialites section.spes ul > li span {
+    width: 50%;
+    text-align: center;
+}
+
+#t-shirts {
+    position: absolute;
+    top: 55.7%;
+    left: 55.8%;
+    z-index: 1;
+    width: 53%;
+}
+
+#t-shirts img{
+    width: 30.5%;
+    position: absolute;
+    left: 100%;
+}
+
+#t-shirts img#t-shirt-jaune{
+    animation: movingTShirt 3s ease, stayingTShirt 2s ease forwards;
+    animation-delay: 8.1s, 13s;
+}
+
+#t-shirts img#t-shirt-bleu{
+    animation: movingTShirt 2s ease;
+    animation-delay: 10s;
+}
+
+#t-shirts img#t-shirt-rouge{
+    animation: movingTShirt 2s ease;
+    animation-delay: 11.4s;
+}
+
+@keyframes movingTShirt {
+    0% {
+        left: 100%;
+    }
+    40% {
+        left: -73.5%;
+    }
+    60% {
+        left: -73.5%;
+    }
+    100% {
+        left: -140%;
+    }
+}
+
+@keyframes stayingTShirt {
+    0% {
+        left: 100%;
+    }
+    40% {
+        left: -73.5%;
+    }
+    100% {
+        left: -73.5%;
+    }
+}
+
+.etape_2_specialites section.spes ul > li:first-child, .etape_2_specialites section.spes ul > li:first-child img {
+    animation: pulse 0.3s 15.3s ease 2 forwards;
+}
+
+
+
+
+/********\
+
+   ETAPE_2_LEVEL
+
+\********/
+.etape_2_levels {
+    position: absolute;
+    top: 0%;
+    right: -100%;
+    display: block;
+    width: 50%;
+    height: 100%;
+    background-color: #E7344C;
+    z-index: 3;
+    animation: swipeLeft .8s ease 1 forwards;/* swipeRight .8s ease 1 forwards;*/
+    animation-delay: 17s;/* 16.5s;*/
+}
+
+.etape_2_levels section.header h1 {
+    margin-left: -98%;
+    top: -130%;
+    animation: movingTitleDown 0.3s ease 1 forwards; /*movingTitleUp 0.3s ease 1 forwards;*/
+    animation-delay: 17.6s;
+}
+
+
+.etape_2_levels section.levels {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 79%;
+}
+
+.etape_2_levels section.levels article {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.etape_2_levels section.levels .fleche-container-level {
+    display: block;
+    height: 135px;
+    width: 310px;
+    background-color: #c1c2c2;
+    position: relative;
+}
+
+
+.etape_2_levels section.levels .fleche-container-level:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: #c1c2c2;
+    margin: 0px auto;
+    width: 15px;
+    height: 15px;
+    box-shadow: 0px 15px 0 0 #c1c2c2, 15px 15px 0 0 #c1c2c2, 0px 30px 0 0 #c1c2c2, 15px 30px 0 0 #c1c2c2, 30px 30px 0 0 #c1c2c2, 0px 45px 0 0 #c1c2c2, 15px 45px 0 0 #c1c2c2, 30px 45px 0 0 #c1c2c2, 45px 45px 0 0 #c1c2c2, 0px 60px 0 0 #c1c2c2, 15px 60px 0 0 #c1c2c2, 30px 60px 0 0 #c1c2c2, 45px 60px 0 0 #c1c2c2, 60px 60px 0 0 #c1c2c2, 0px 75px 0 0 #c1c2c2, 15px 75px 0 0 #c1c2c2, 30px 75px 0 0 #c1c2c2, 45px 75px 0 0 #c1c2c2, 0px 90px 0 0 #c1c2c2, 15px 90px 0 0 #c1c2c2, 30px 90px 0 0 #c1c2c2, 0px 105px 0 0 #c1c2c2, 15px 105px 0 0 #c1c2c2, 0px 120px 0 0 #c1c2c2;
+}
+
+.etape_2_levels section.levels .fleche-container-level:nth-child(2) {
+    background-color: #aaacad;
+}
+
+.etape_2_levels section.levels .fleche-container-level:nth-child(2):before {
+    background-color: #aaacad;
+    box-shadow: 0px 0px 0 0 #aaacad, 0px 15px 0 0 #aaacad, 15px 15px 0 0 #aaacad, 0px 30px 0 0 #aaacad, 15px 30px 0 0 #aaacad, 30px 30px 0 0 #aaacad, 0px 45px 0 0 #aaacad, 15px 45px 0 0 #aaacad, 30px 45px 0 0 #aaacad, 45px 45px 0 0 #aaacad, 0px 60px 0 0 #aaacad, 15px 60px 0 0 #aaacad, 30px 60px 0 0 #aaacad, 45px 60px 0 0 #aaacad, 60px 60px 0 0 #aaacad, 0px 75px 0 0 #aaacad, 15px 75px 0 0 #aaacad, 30px 75px 0 0 #aaacad, 45px 75px 0 0 #aaacad, 0px 90px 0 0 #aaacad, 15px 90px 0 0 #aaacad, 30px 90px 0 0 #aaacad, 0px 105px 0 0 #aaacad, 15px 105px 0 0 #aaacad, 0px 120px 0 0 #aaacad;
+}
+
+.etape_2_levels section.levels .fleche-container-level:nth-child(3) {
+    background-color: #929596;
+}
+
+.etape_2_levels section.levels .fleche-container-level:nth-child(3):before {
+    background-color: #929596;
+    box-shadow: 0px 0px 0 0 #929596, 0px 15px 0 0 #929596, 15px 15px 0 0 #929596, 0px 30px 0 0 #929596, 15px 30px 0 0 #929596, 30px 30px 0 0 #929596, 0px 45px 0 0 #929596, 15px 45px 0 0 #929596, 30px 45px 0 0 #929596, 45px 45px 0 0 #929596, 0px 60px 0 0 #929596, 15px 60px 0 0 #929596, 30px 60px 0 0 #929596, 45px 60px 0 0 #929596, 60px 60px 0 0 #929596, 0px 75px 0 0 #929596, 15px 75px 0 0 #929596, 30px 75px 0 0 #929596, 45px 75px 0 0 #929596, 0px 90px 0 0 #929596, 15px 90px 0 0 #929596, 30px 90px 0 0 #929596, 0px 105px 0 0 #929596, 15px 105px 0 0 #929596, 0px 120px 0 0 #929596;
+}
+
+
+.etape_2_levels section.levels .fleche-container-level:nth-child(4) {
+    background-color: #6a6d6e;
+}
+
+.etape_2_levels section.levels .fleche-container-level:nth-child(4):before {
+    background-color: #6a6d6e;
+    box-shadow: 0px 0px 0 0 #6a6d6e, 0px 15px 0 0 #6a6d6e, 15px 15px 0 0 #6a6d6e, 0px 30px 0 0 #6a6d6e, 15px 30px 0 0 #6a6d6e, 30px 30px 0 0 #6a6d6e, 0px 45px 0 0 #6a6d6e, 15px 45px 0 0 #6a6d6e, 30px 45px 0 0 #6a6d6e, 45px 45px 0 0 #6a6d6e, 0px 60px 0 0 #6a6d6e, 15px 60px 0 0 #6a6d6e, 30px 60px 0 0 #6a6d6e, 45px 60px 0 0 #6a6d6e, 60px 60px 0 0 #6a6d6e, 0px 75px 0 0 #6a6d6e, 15px 75px 0 0 #6a6d6e, 30px 75px 0 0 #6a6d6e, 45px 75px 0 0 #6a6d6e, 0px 90px 0 0 #6a6d6e, 15px 90px 0 0 #6a6d6e, 30px 90px 0 0 #6a6d6e, 0px 105px 0 0 #6a6d6e, 15px 105px 0 0 #6a6d6e, 0px 120px 0 0 #6a6d6e;
+}
+
+
+.etape_2_levels section.levels .fleche-container-level:last-child {
+    background-color: #535556;
+}
+
+.etape_2_levels section.levels .fleche-container-level:last-child:before {
+    background-color: #535556;
+    box-shadow: 0px 0px 0 0 #535556, 0px 15px 0 0 #535556, 15px 15px 0 0 #535556, 0px 30px 0 0 #535556, 15px 30px 0 0 #535556, 30px 30px 0 0 #535556, 0px 45px 0 0 #535556, 15px 45px 0 0 #535556, 30px 45px 0 0 #535556, 45px 45px 0 0 #535556, 0px 60px 0 0 #535556, 15px 60px 0 0 #535556, 30px 60px 0 0 #535556, 45px 60px 0 0 #535556, 60px 60px 0 0 #535556, 0px 75px 0 0 #535556, 15px 75px 0 0 #535556, 30px 75px 0 0 #535556, 45px 75px 0 0 #535556, 0px 90px 0 0 #535556, 15px 90px 0 0 #535556, 30px 90px 0 0 #535556, 0px 105px 0 0 #535556, 15px 105px 0 0 #535556, 0px 120px 0 0 #535556;
+}
+
+.etape_2_levels section.levels .fleche-container-level h2 {
+    font-family: 'Zona Black', sans-serif;
+    color: #fff;
+    height: 135px;
+    line-height: 135px;
+    vertical-align: top;
+    width: 100%;
+    padding-left: 15px;
+    text-transform: uppercase;
+    font-size: 25px;
+    text-align: center;
+    display: inline-block;
+}
+
+.etape_2_levels section.levels .fleche-container-level .fleche-pixel-level.active:before {
+    content: "";
+    position: absolute;
+    top: 45px;
+    left: -20%;
+    background: #fff;
+    margin: 0px auto;
+    width: 0.3em;
+    height: 0.3em;
+    box-shadow: 0em 0.3em 0 0 rgb(92, 193, 240), 0.3em 0.3em 0 0 #fff, 0em 0.6em 0 0 rgb(92, 193, 240), 0.3em 0.6em 0 0 rgb(92, 193, 240), 0.6em 0.6em 0 0 #fff, 0em 0.9em 0 0 rgb(92, 193, 240), 0.3em 0.9em 0 0 rgb(92, 193, 240), 0.6em 0.9em 0 0 rgb(92, 193, 240), 0.9em 0.9em 0 0 #fff, 0em 1.2em 0 0 rgb(92, 193, 240), 0.3em 1.2em 0 0 rgb(92, 193, 240), 0.6em 1.2em 0 0 rgb(92, 193, 240), 0.9em 1.2em 0 0 rgb(92, 193, 240), 1.2em 1.2em 0 0 #fff, 0em 1.5em 0 0 rgb(92, 193, 240), 0.3em 1.5em 0 0 rgb(92, 193, 240), 0.6em 1.5em 0 0 rgb(92, 193, 240), 0.9em 1.5em 0 0 #fff, 0em 1.8em 0 0 rgb(92, 193, 240), 0.3em 1.8em 0 0 rgb(92, 193, 240), 0.6em 1.8em 0 0 #fff, 0em 2.1em 0 0 rgb(92, 193, 240), 0.3em 2.1em 0 0 #fff, 0em 2.4em 0 0 #fff;
+    animation: pulseAvatar 0.3s ease 2;
+    animation-delay: 21s;
+}
+
+.etape_2_levels section.levels .fleche-container-level:last-child, .etape_2_levels section.levels .fleche-container-level:last-child:before {
+    animation: pulse 0.3s 21s ease 2;
+}

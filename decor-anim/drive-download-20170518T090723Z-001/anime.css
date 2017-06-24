@@ -1,0 +1,91 @@
+
+*{
+	margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+
+}
+body {
+	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+}
+.character1 {
+	z-index: 50;
+	position: absolute;
+	left: calc(50vw - 150px);
+	bottom: 220px;
+	width: 300px;
+	height: 350px;
+	background-image: url(character1-09.png);
+	animation: charAnim 0.5s  infinite;
+	animation-timing-function: steps(6);
+
+}
+
+@keyframes charAnim {
+	0% {
+		background-position: -300px;
+
+	}
+	100% {
+		background-position: -2100px;
+	}
+	
+}
+.floorBox{
+	position: absolute;
+	background-color: red;
+	height: 20vh;
+	width: 120vw;
+	left: -135px;
+	bottom: 0;
+	-webkit-transform:perspective(600) rotateX(45deg);
+}
+.floor {
+	height: 30vh;
+	width: 11090px;
+	background-size: cover;
+	background-image: url(plancher.png);
+	animation: floorAnim 23s linear;
+	bottom: 0;
+	position: absolute;
+	z-index: -50;
+		left: -135px;
+
+}
+@keyframes floorAnim {
+
+	100% {
+		left: -11090px;
+	}
+	
+}
+/*.decorBox {
+	height: 80vh;
+	width: 1920px;
+	background-color: blue;
+
+}*/
+.decor {
+	height: 80vh;
+	// background-color: blue;
+	width: 13387px;
+	background-image: url(DecorLevel2_1.png);
+	// background-size: cover;
+	// background-position: bottom left;
+	animation: decorAnim 35s linear;
+	position: absolute;
+	top: 0px;
+}
+@keyframes decorAnim {
+
+	0% {
+		left: 0px;
+	}
+	100% {
+		left: -13387px;
+	}
+	
+}
+

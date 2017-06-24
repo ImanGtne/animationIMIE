@@ -1,0 +1,198 @@
+
+/********\
+    INTRO
+   ETAPE_2_CARTE
+
+\********/
+/* mise en plade des éléments */
+.etape_2_carte {
+    position: absolute;
+    top: 0%;
+    right: -100%;
+    display: block;
+    width: 50%;
+    height: 100%;
+    background-image: url('../img/fond-carte.png');
+    background-repeat: repeat-y;
+    background-size: 100%;
+    z-index: 3;
+    animation: swipeLeft .8s ease 1 forwards, swipeRight .8s ease 1 forwards;
+    /* animation-delay: 7s, 10.5s;*/
+    animation-delay: 8.5s, 13.7s;
+}
+/* anim effet de la carte */
+@keyframes swipeLeft {
+    0% {
+        right: -100%
+    }
+    100% {
+        right: 0%;
+    }
+}
+@keyframes swipeRight {
+    0% {
+        right: 0%;
+    }
+    100% {
+        right: -100%;
+    }
+
+}
+/* title + effet down pour début et up après validation */
+.etape_2_carte section.header h1 {
+    margin-left: -98%;
+    top: -130%;
+    animation: movingTitleDown 0.3s ease 1 forwards, movingTitleUp 0.3s ease 1 forwards;
+    /*animation-delay: 7.6s, 10.1s;*/
+    animation-delay: 9.1s, 13.5s;
+}
+@keyframes movingTitleDown {
+    0% {
+        top: -130%;
+    }
+    100% {
+        top: 0%;
+    }
+}
+/* image carte */
+.etape_2_carte section.carte article:first-child {
+    margin-top: -22%;
+    text-align: right;
+}
+.etape_2_carte section.carte article:first-child img {
+    position: relative;
+    height: 100%;
+}
+/* marqueurs en before et after sur la carte */
+.etape_2_carte section.carte article:first-child:before {
+    content: "";
+    display: block;
+    width: 87px;
+    height: 127px;
+    position: absolute;
+    background-image: url("../img/marqueur.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 46%;
+    left: 46%;
+    z-index: 2;
+    animation: movingMarker 0.2s ease 3, movingMarker 0.2s ease 3;
+    /*animation-delay: 7.7s, 9.1s;*/
+    animation-delay: 9s, 11.7s;
+}
+.etape_2_carte section.carte article:first-child:after {
+    content: "";
+    display: block;
+    width: 87px;
+    height: 127px;
+    position: absolute;
+    background-image: url("../img/marqueur.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 39%;
+    left: 59%;
+    z-index: 2;
+    animation: movingMarker2 0.3s ease 3;
+    /*animation-delay: 8.2s;*/
+    animation-delay: 10.1s;
+}
+/* anims marqueur 1 */
+@keyframes movingMarker {
+    0% {
+        top: 46%;
+    }
+    100% {
+        top: 45%;
+    }
+}
+/* anims marqueur 2 */
+@keyframes movingMarker2 {
+    0% {
+        top: 39%;
+    }
+    100% {
+        top: 38%;
+    }
+}
+/* article de la liste des campus */
+.etape_2_carte section.carte article:last-child {
+    position: relative;
+    margin-top: -70%;
+}
+.etape_2_carte section.carte article ul {
+    padding-left: 70px;
+}
+.etape_2_carte section.carte article li {
+    color: #fff;
+    font-size: 2.5em;;
+    line-height: 2em;;
+    text-align: left;
+    position: relative;
+}
+/* gestion des li active */
+.etape_2_carte section.carte article:last-child ul > li.active {
+    color: rgb(92, 193, 240);
+}
+/* arrow en before sur les li active */
+.etape_2_carte section.carte article ul li.active::before {
+    content: "";
+    position: absolute;
+    top: 0.4em;
+    left: -1em;
+    background: #fff;
+    margin: 0px auto;
+    width: 0.3em;
+    height: 0.3em;
+    box-shadow: 0em 0.3em 0 0 rgb(92, 193, 240), 0.3em 0.3em 0 0 #fff, 0em 0.6em 0 0 rgb(92, 193, 240), 0.3em 0.6em 0 0 rgb(92, 193, 240), 0.6em 0.6em 0 0 #fff, 0em 0.9em 0 0 rgb(92, 193, 240), 0.3em 0.9em 0 0 rgb(92, 193, 240), 0.6em 0.9em 0 0 rgb(92, 193, 240), 0.9em 0.9em 0 0 #fff, 0em 1.2em 0 0 rgb(92, 193, 240), 0.3em 1.2em 0 0 rgb(92, 193, 240), 0.6em 1.2em 0 0 rgb(92, 193, 240), 0.9em 1.2em 0 0 rgb(92, 193, 240), 1.2em 1.2em 0 0 #fff, 0em 1.5em 0 0 rgb(92, 193, 240), 0.3em 1.5em 0 0 rgb(92, 193, 240), 0.6em 1.5em 0 0 rgb(92, 193, 240), 0.9em 1.5em 0 0 #fff, 0em 1.8em 0 0 rgb(92, 193, 240), 0.3em 1.8em 0 0 rgb(92, 193, 240), 0.6em 1.8em 0 0 #fff, 0em 2.1em 0 0 rgb(92, 193, 240), 0.3em 2.1em 0 0 #fff, 0em 2.4em 0 0 #fff;
+    transform: scale(0.40);
+}
+/* pulse sur le li validé "NANTES" */
+.etape_2_carte section.carte article:last-child ul > li:first-child {
+    /*animation: pulse 0.1s 9.5s ease 2 forwards;*/
+    animation: pulse 0.1s 12.5s ease 2 forwards;
+}
+/* anim arrow */
+@keyframes arrowMap {
+    0% {
+        top: 1.2em;
+    }
+    100% {
+        top: 6em;
+    }
+}
+/*
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        color: rgb(92, 193, 240);
+    }
+    50% {
+        opacity: 0;
+        color: #fff;
+    }
+    100% {
+        opacity: 1;
+        color: rgb(92, 193, 240);
+    }
+}
+
+
+@keyframes fadeIn {
+    0% {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    100%
+    {
+        background: rgba(255,255,255,1);
+    }
+}
+@keyframes fadeOut {
+
+    0% {
+        background: rgba(255, 255, 255, 1);
+    }
+    100% {
+        background: rgba(255, 255, 255, 0);
+    }
+}*/

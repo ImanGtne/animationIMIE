@@ -1,0 +1,519 @@
+
+*{
+	margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+
+}
+body {
+	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+}
+/*
+gestion du Z-index
+Background 0 - 999
+Personnage 1000-1500
+Personnage central 1250
+Objets premier plan 1500-2999
+flash etoiles 3000
+Onglets 5000
+
+
+*/
+/* Global Animation */
+/*———————————————————————————————————————————————————*/
+
+
+.ProgressBar {
+	opacity: 0;
+}
+/*Situation de départ de la scène*/
+.scene {
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100vh;
+	width: 100vw;
+
+}
+/*Apparition de la scéne*/
+.activeScene {
+	opacity: 1;
+}
+/*Application de la prespective sur la box contenant le sol*/
+.scene .floorBox{
+	position: absolute;
+	// background-color: red;
+	height: 40vh;
+	width: 100vw;
+	bottom: 0;
+	z-index: -10;
+	perspective-origin: top;
+	-webkit-perspective-origin: bottom;
+	-webkit-transform: perspective(400) rotateX(45deg);
+}
+/*globalisation de la scene en un élement*/
+.scene .decorBox {
+	left: 0;
+	position: absolute;
+	width: 100vw;
+	height: 80vh;
+	background-color: white;
+	bottom: 20vh;
+}
+.transition {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 50;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	background: rgb(229, 50, 78);
+	opacity: 0;
+	animation: fadeIn 1s forwards, fadeOut 2s forwards;
+}
+.transition > h2 { 
+	margin-top: 50px;
+	font-size: 3em;
+}
+.scene .decorBox {
+	left: 0;
+	position: absolute;
+	width: 100vw;
+	height: 80vh;
+	background-color: white;
+	bottom: 20vh;
+}
+
+/* Personnage */
+/*———————————————————————————————————————————————————*/
+.character1 {
+	width: 300px;
+	height: 350px;
+	background-image: url(../img/character1-09.png);
+}
+.character2 {
+	width: 210px;
+	height: 350px;
+	background: url(../img/bonhomme2.png) left center;
+}
+.character3 {
+
+    width: 205px;
+    height: 350px;
+	background: url(../img/bonhoemme1-350px.png) left center;
+
+}
+.character4 {
+    width: 218px;
+    height: 350px;
+	background: url(../img/bonhoemme2-350px.png) left center;
+}
+/* Scene 1 */
+/*———————————————————————————————————————————————————*/
+
+.transition1 {
+	animation-delay: 0s, 3s;
+}
+/*Gestion de l'apparition de la scene*/
+.scene1 {
+	animation: fadeOut 2s forwards;
+	animation-delay: 21s;
+}
+.scene1 .character1 {
+	bottom: 120px;
+	z-index: 1250;
+	left: -300px;
+	position: absolute;
+
+	animation: charAnim1 0.5s infinite, boxAnim1 17s;
+	animation-timing-function: steps(6), linear;
+	animation-delay: 0s, 4s;
+}
+.scene1 .character2 {
+	bottom: 100px;
+	z-index: 1400;
+	left: -300px;
+	position: absolute;
+
+	animation: charAnim2 0.65s infinite, boxAnimLtoR 8s;
+	animation-timing-function: steps(6), linear;
+	animation-delay: 0s, 6s;
+}
+.scene1 .character3 {
+	bottom: 140px;
+	z-index: 1100;
+	left: -300px;
+	position: absolute;
+
+	animation: charAnim3 0.65s infinite, boxAnimRtoL 10s;
+	animation-timing-function: steps(6), linear;
+	animation-delay: 0s, 8s;
+}
+
+.scene1 .floor1 {
+	height: 30vh;
+	width: 12831px; 
+	background-size: cover;
+	background-image: url(../img/plancher_2.png);
+	animation: floorAnim 13s linear forwards;
+	animation-delay: 6s;
+	bottom: 0;
+	position: absolute;
+	z-index: -50;
+	left: 0;
+
+}
+
+.scene1 .decor1 {
+	height: 80vh;
+	background-color: rgba(92, 193, 240, 0.3);
+	width: 12831px;
+	background-image: url(../img/DecorLevel2_2.png);
+	// background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	animation: decorAnim 13s linear forwards;
+	animation-delay: 6s;
+	position: absolute;
+}
+
+/* Scene 2 */
+/*———————————————————————————————————————————————————*/
+
+.transition2 {
+
+	animation-delay: 19s, 21s;
+}
+
+.scene2 .character1 {
+	bottom: 120px;
+	z-index: 1250;
+	left: -300px;
+	position: absolute;
+
+	animation: charAnim1 0.5s  infinite, boxAnim1 17s;
+	animation-timing-function: steps(6), linear;
+	animation-delay: 19s, 23s;
+}
+.scene2 .character2 {
+	bottom: 100px;
+	z-index: 1400;
+	left: -300px;
+	position: absolute;
+
+	animation: charAnim2 0.65s infinite, boxAnimRtoL 10s;
+	animation-timing-function: steps(6), linear;
+	animation-delay: 19s, 27s;
+}
+
+.scene2 .floor2 {
+	height: 30vh;
+	width: 12831px; 
+	background-size: cover;
+	background-image: url(../img/plancher_3.png);
+	animation: floorAnim 13s linear forwards;
+	animation-delay: 25s;
+	bottom: 0;
+	position: absolute;
+	z-index: -50;
+	left: 0;
+
+}
+
+.scene2 .decor2 {
+	height: 80vh;
+	background-color: rgba(92, 193, 240, 0.5);
+	width: 12831px;
+	background-image: url(../img/DecorLevel3_1.png);
+	// background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	animation: decorAnim 13s linear forwards;
+	animation-delay: 25s;
+	position: absolute;
+}
+
+/* Scene 3 */
+/*———————————————————————————————————————————————————*/
+
+.transition3 {
+
+	animation-delay: 38s, 40s;
+	background: rgb(88, 143, 117);
+
+}
+
+.scene3 .character1 {
+	bottom: 120px;
+	z-index: 1250;
+	left: -300px;
+	position: absolute;
+	animation: charAnim1 0.5s  infinite, boxAnim1 17s;
+	animation-timing-function: steps(6), linear;
+	animation-delay: 38s, 42s;
+}
+.scene3 .character4 {
+	bottom: 90px;
+	z-index: 1400;
+	left: -250px;
+	position: absolute;
+
+	animation: charAnim4 0.65s infinite, boxAnimLtoR 10s;
+	animation-timing-function: steps(6), linear;
+	animation-delay: 38s, 45s;
+}
+
+.scene3 .floor3 {
+	height: 30vh;
+	width: 12831px; 
+	background-size: cover;
+	background-image: url(../img/plancher_4.png);
+	animation: floorAnim 13s linear forwards;
+	animation-delay: 44s;
+	bottom: 0;
+	position: absolute;
+	z-index: -50;
+	left: 0;
+
+}
+
+.scene3 .decor3 {
+	height: 80vh;
+	background-color: rgba(92, 193, 240, 0.5);
+	width: 12831px;
+	background-image: url(../img/DecorLevel4_1.png);
+	// background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	animation: decorAnim 13s linear forwards;
+	animation-delay: 44s;
+	position: absolute;
+}
+/* Scene Finale */
+/*———————————————————————————————————————————————————*/
+.transition4 {
+
+	animation-delay: 62s, 64s;
+	background: rgb(88, 143, 117);
+
+}
+
+.scene4 .character1 {
+	bottom: 120px;
+	z-index: 1250;
+	left: -300px;
+	position: absolute;
+	animation: charAnim1 0.5s  infinite, boxAnim1 17s;
+	animation-timing-function: steps(6), linear;
+	animation-delay: 62s, 65s;
+}
+
+.scene4 .floor4 {
+	height: 30vh;
+	width: 10359px; 
+	background-size: cover;
+	background-image: url(../img/plancher_5.png);
+	animation: floorAnim4 13s linear forwards;
+	animation-delay: 66s;
+	bottom: 0;
+	position: absolute;
+	z-index: -50;
+	left: 0;
+
+}
+
+.scene4 .decor4 {
+	height: 80vh;
+	background-color: rgba(92, 193, 240, 0.5);
+	width: 10359px;
+	background-image: url(../img/DecorFinal_1.png);
+	// background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	animation: decorAnim4 13s linear forwards;
+	animation-delay: 66s;
+	position: absolute;
+}
+
+/* Global Keyframe */
+/*———————————————————————————————————————————————————*/
+@keyframes fadeIn {
+
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes fadeOut {
+
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes floorAnim {
+
+	100% {
+		left: calc(-12831px + 100vw);
+	}
+	
+}
+@keyframes decorAnim {
+
+	0% {
+		left: 0px;
+	}
+	100% {
+		left: calc(-12831px + 100vw);
+	}
+	
+}
+/* Spécifique Animation finale */
+@keyframes decorAnim4 {
+
+	0% {
+		left: 0px;
+	}
+	100% {
+		left: calc(-10359px + 100vw);
+	}
+	
+}
+@keyframes floorAnim4 {
+
+	100% {
+		left: calc(-10359px + 100vw);
+	}
+	
+}
+/*———————————————————————————————————————————————————*/
+/* ANIMATIONS PERSONNAGE */
+/*———————————————————————————————————————————————————*/
+
+/* Animation personnage principal */
+@keyframes charAnim1 {
+	0% {
+		background-position: -300px;
+
+	}
+	100% {
+		background-position: -2100px;
+	}
+	
+}
+/*Animation personnage secondaire*/
+@keyframes charAnim2 {
+    0% {
+        background-position: -230px;
+    }
+    100% {
+        background-position: -1600px;
+    }
+}
+@keyframes charAnim3 {
+   0% {
+        background-position: -205px;
+    }
+    100% {
+        background-position: -1435px;
+    }
+}
+@keyframes charAnim4 {
+    0% {
+        background-position: -218px;
+    }
+    100% {
+        background-position: -1521px;
+    }
+}
+/*———————————————————————————————————————————————————*/
+/* DEPLACEMENT PERSONNAGE SUR LA SCENE*/
+/*———————————————————————————————————————————————————*/
+
+
+/* Deplacement personnage Principal Scéne 1 2 et 3 */
+@keyframes boxAnim1 {
+	0%{
+		left: -300px;
+	}
+	11.76% {
+		left: calc(50vw - 150px);
+	}
+	88.24% {
+		left: calc(50vw - 150px);
+	}
+	100% {
+		left: 100vw;
+	}
+
+}
+/*———————————————————— SCENE 1 —————————————————————*/
+
+/*Déplacement personnage secondaire Scene 1 */
+@keyframes boxAnimLtoR {
+	0%{
+		left: -300px;
+	}
+	100% {
+		left: 100vw;
+	}
+
+}
+/*Déplacement personnage tertiaire Scene 1 */
+@keyframes boxAnimRtoL {
+	0%{
+		left: 100vw;
+	}
+	100% {
+		left: -300px;
+	}
+
+}
+/*———————————————————— SCENE 2 —————————————————————*/
+
+
+
+
+/* Deplacement personnage animation finale*/
+@keyframes boxAnimFinal {
+	0%{
+		left: -300px;
+	}
+	11.76% {
+		left: calc(50vw - 150px);
+	}
+	88.24% {
+		left: calc(50vw - 150px);
+	}
+	100% {
+		left: 100vw;
+	}
+
+}
+/* Deplacement personnage secondaire*/
+@keyframes boxAnimSecond {
+	0%{
+		left: -300px;
+	}
+	11.76% {
+		left: calc(50vw - 150px);
+	}
+	88.24% {
+		left: calc(50vw - 150px);
+	}
+	100% {
+		left: 100vw;
+	}
+
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    h1 {
+        font-size: 40px;
+        line-height: 74px;
+        display: inline-block;
+        text-align: center;
+        background-color: #FFEF2C;
+        border-top: 7px solid black;
+        border-bottom: 7px solid black;
+        position: relative;
+    }
+    body
+    {
+        background: red;
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    .mentions
+    {
+        background: rgba(229, 50, 78, 1);
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100vw;
+        height: 100vh;
+        display: none;
+        z-index: 3500;
+        animation: fadeIn 1s forwards, fadeOut 1s forwards 13s 1;
+    }
+</style>
+<body>
+<section class="mentions">
+        <div class="header logo-game">
+            <h1>&#x3c;IMIE WORLD/&#x3E;</h1>
+        </div>
+        <div class="logo-imie">
+            <img src="img/logo-imie.png" alt="IMIE, Filière du numérique">
+        </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,131 @@
+/********\
+
+    INTRO
+   ETAPE_2_LEVEL
+
+
+\********/
+/* BLOC GAUCHE DES LEVELS */
+.etape_2_levels {
+    position: absolute;
+    top: 0%;
+    right: -100%;
+    display: block;
+    width: 50%;
+    height: 100%;
+    background-color: #E7344C;
+    z-index: 4;
+    animation: swipeLeft .8s ease 1 forwards, swipeRight .8s ease 1 forwards;
+    animation-delay: 22.3s, 26.9s;
+}
+.etape_2_levels section.header h1 {
+    margin-left: -102.5%;
+    top: -130%;
+    animation: movingTitleDown 0.3s ease 1 forwards, movingTitleUp 0.3s ease 1 forwards;
+    animation-delay: 22.65s, 26.7s;
+}
+
+
+/* bloc levels */
+.etape_2_levels section.levels {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 79%;
+}
+/* différents levels */
+.etape_2_levels section.levels article {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+/* chaque level */
+.etape_2_levels section.levels .fleche-container-level {
+    display: block;
+    height: 135px;
+    width: 310px;
+    background-color: #c1c2c2;
+    position: relative;
+}
+
+/* fleche sur les levels (bout pointe des blocs) */
+.etape_2_levels section.levels .fleche-container-level:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: #c1c2c2;
+    margin: 0px auto;
+    width: 15px;
+    height: 15px;
+    box-shadow: 0px 15px 0 0 #c1c2c2, 15px 15px 0 0 #c1c2c2, 0px 30px 0 0 #c1c2c2, 15px 30px 0 0 #c1c2c2, 30px 30px 0 0 #c1c2c2, 0px 45px 0 0 #c1c2c2, 15px 45px 0 0 #c1c2c2, 30px 45px 0 0 #c1c2c2, 45px 45px 0 0 #c1c2c2, 0px 60px 0 0 #c1c2c2, 15px 60px 0 0 #c1c2c2, 30px 60px 0 0 #c1c2c2, 45px 60px 0 0 #c1c2c2, 60px 60px 0 0 #c1c2c2, 0px 75px 0 0 #c1c2c2, 15px 75px 0 0 #c1c2c2, 30px 75px 0 0 #c1c2c2, 45px 75px 0 0 #c1c2c2, 0px 90px 0 0 #c1c2c2, 15px 90px 0 0 #c1c2c2, 30px 90px 0 0 #c1c2c2, 0px 105px 0 0 #c1c2c2, 15px 105px 0 0 #c1c2c2, 0px 120px 0 0 #c1c2c2;
+}
+
+/* levels en pixelart -> chacun sa couleur */
+.etape_2_levels section.levels .fleche-container-level:nth-child(2) {
+    background-color: #aaacad;
+}
+.etape_2_levels section.levels .fleche-container-level:nth-child(2):before {
+    background-color: #aaacad;
+    box-shadow: 0px 0px 0 0 #aaacad, 0px 15px 0 0 #aaacad, 15px 15px 0 0 #aaacad, 0px 30px 0 0 #aaacad, 15px 30px 0 0 #aaacad, 30px 30px 0 0 #aaacad, 0px 45px 0 0 #aaacad, 15px 45px 0 0 #aaacad, 30px 45px 0 0 #aaacad, 45px 45px 0 0 #aaacad, 0px 60px 0 0 #aaacad, 15px 60px 0 0 #aaacad, 30px 60px 0 0 #aaacad, 45px 60px 0 0 #aaacad, 60px 60px 0 0 #aaacad, 0px 75px 0 0 #aaacad, 15px 75px 0 0 #aaacad, 30px 75px 0 0 #aaacad, 45px 75px 0 0 #aaacad, 0px 90px 0 0 #aaacad, 15px 90px 0 0 #aaacad, 30px 90px 0 0 #aaacad, 0px 105px 0 0 #aaacad, 15px 105px 0 0 #aaacad, 0px 120px 0 0 #aaacad;
+}
+.etape_2_levels section.levels .fleche-container-level:nth-child(3) {
+    background-color: #929596;
+}
+.etape_2_levels section.levels .fleche-container-level:nth-child(3):before {
+    background-color: #929596;
+    box-shadow: 0px 0px 0 0 #929596, 0px 15px 0 0 #929596, 15px 15px 0 0 #929596, 0px 30px 0 0 #929596, 15px 30px 0 0 #929596, 30px 30px 0 0 #929596, 0px 45px 0 0 #929596, 15px 45px 0 0 #929596, 30px 45px 0 0 #929596, 45px 45px 0 0 #929596, 0px 60px 0 0 #929596, 15px 60px 0 0 #929596, 30px 60px 0 0 #929596, 45px 60px 0 0 #929596, 60px 60px 0 0 #929596, 0px 75px 0 0 #929596, 15px 75px 0 0 #929596, 30px 75px 0 0 #929596, 45px 75px 0 0 #929596, 0px 90px 0 0 #929596, 15px 90px 0 0 #929596, 30px 90px 0 0 #929596, 0px 105px 0 0 #929596, 15px 105px 0 0 #929596, 0px 120px 0 0 #929596;
+}
+.etape_2_levels section.levels .fleche-container-level:nth-child(4) {
+    background-color: #6a6d6e;
+}
+
+.etape_2_levels section.levels .fleche-container-level:nth-child(4):before {
+    background-color: #6a6d6e;
+    box-shadow: 0px 0px 0 0 #6a6d6e, 0px 15px 0 0 #6a6d6e, 15px 15px 0 0 #6a6d6e, 0px 30px 0 0 #6a6d6e, 15px 30px 0 0 #6a6d6e, 30px 30px 0 0 #6a6d6e, 0px 45px 0 0 #6a6d6e, 15px 45px 0 0 #6a6d6e, 30px 45px 0 0 #6a6d6e, 45px 45px 0 0 #6a6d6e, 0px 60px 0 0 #6a6d6e, 15px 60px 0 0 #6a6d6e, 30px 60px 0 0 #6a6d6e, 45px 60px 0 0 #6a6d6e, 60px 60px 0 0 #6a6d6e, 0px 75px 0 0 #6a6d6e, 15px 75px 0 0 #6a6d6e, 30px 75px 0 0 #6a6d6e, 45px 75px 0 0 #6a6d6e, 0px 90px 0 0 #6a6d6e, 15px 90px 0 0 #6a6d6e, 30px 90px 0 0 #6a6d6e, 0px 105px 0 0 #6a6d6e, 15px 105px 0 0 #6a6d6e, 0px 120px 0 0 #6a6d6e;
+}
+.etape_2_levels section.levels .fleche-container-level:last-child {
+    background-color: #535556;
+}
+.etape_2_levels section.levels .fleche-container-level:last-child:before {
+    background-color: #535556;
+    box-shadow: 0px 0px 0 0 #535556, 0px 15px 0 0 #535556, 15px 15px 0 0 #535556, 0px 30px 0 0 #535556, 15px 30px 0 0 #535556, 30px 30px 0 0 #535556, 0px 45px 0 0 #535556, 15px 45px 0 0 #535556, 30px 45px 0 0 #535556, 45px 45px 0 0 #535556, 0px 60px 0 0 #535556, 15px 60px 0 0 #535556, 30px 60px 0 0 #535556, 45px 60px 0 0 #535556, 60px 60px 0 0 #535556, 0px 75px 0 0 #535556, 15px 75px 0 0 #535556, 30px 75px 0 0 #535556, 45px 75px 0 0 #535556, 0px 90px 0 0 #535556, 15px 90px 0 0 #535556, 30px 90px 0 0 #535556, 0px 105px 0 0 #535556, 15px 105px 0 0 #535556, 0px 120px 0 0 #535556;
+}
+/* gestion du nom des levels */
+.etape_2_levels section.levels .fleche-container-level h2 {
+    font-family: 'Zona Black', sans-serif;
+    color: #fff;
+    height: 135px;
+    line-height: 135px;
+    vertical-align: top;
+    width: 100%;
+    padding-left: 15px;
+    text-transform: uppercase;
+    font-size: 25px;
+    text-align: center;
+    display: inline-block;
+}
+.etape_2_levels section.levels .fleche-container-level .fleche-pixel-level.active h2 {
+    color: #92E2EF;
+}
+
+/* fleche sur les levels actifs */
+.etape_2_levels section.levels .fleche-container-level .fleche-pixel-level.active:before {
+    content: "";
+    position: absolute;
+    top: 45px;
+    left: -20%;
+    background: #fff;
+    margin: 0px auto;
+    width: 0.3em;
+    height: 0.3em;
+    box-shadow: 0em 0.3em 0 0 rgb(92, 193, 240), 0.3em 0.3em 0 0 #fff, 0em 0.6em 0 0 rgb(92, 193, 240), 0.3em 0.6em 0 0 rgb(92, 193, 240), 0.6em 0.6em 0 0 #fff, 0em 0.9em 0 0 rgb(92, 193, 240), 0.3em 0.9em 0 0 rgb(92, 193, 240), 0.6em 0.9em 0 0 rgb(92, 193, 240), 0.9em 0.9em 0 0 #fff, 0em 1.2em 0 0 rgb(92, 193, 240), 0.3em 1.2em 0 0 rgb(92, 193, 240), 0.6em 1.2em 0 0 rgb(92, 193, 240), 0.9em 1.2em 0 0 rgb(92, 193, 240), 1.2em 1.2em 0 0 #fff, 0em 1.5em 0 0 rgb(92, 193, 240), 0.3em 1.5em 0 0 rgb(92, 193, 240), 0.6em 1.5em 0 0 rgb(92, 193, 240), 0.9em 1.5em 0 0 #fff, 0em 1.8em 0 0 rgb(92, 193, 240), 0.3em 1.8em 0 0 rgb(92, 193, 240), 0.6em 1.8em 0 0 #fff, 0em 2.1em 0 0 rgb(92, 193, 240), 0.3em 2.1em 0 0 #fff, 0em 2.4em 0 0 #fff;
+    animation: pulseAvatar 0.3s ease 3;
+    animation-delay: 26s;
+}
+/* anim sur les lelevs */
+.etape_2_levels section.levels .fleche-container-level:nth-child(2), .etape_2_levels section.levels .fleche-container-level:nth-child(2):before {
+    animation: pulse 0.3s 26s ease 3;
+}
